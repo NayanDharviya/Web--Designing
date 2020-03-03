@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log in </title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body style="background-color: blue">
+	
+<div class="container">
+
+	<form  action="about us.html" onsubmit="valid(event)">
+	<div class="form-group" >
+		
+		<center>
+			<a href=""><h1 class="heading">SHOPPERS</h1></a>
+			<h1  id="h1">Log In To Shoppers</h1>
+			<p id="p">To Log In, enter your email address below: </p>
+			<br>
+			<input class="form-control" style="width: 280px;" type="text" id="email" placeholder="Email Address">
+			
+			<br>
+			<input  type="password" style="width: 280px;" class="form-control" id="password" placeholder="Password">
+			
+			<br>
+			
+			<button type="submit" class="btn btn-primary butn" name="login" value="Login" style="background-color:green" >LogIn</button>
+			<br>
+			<br>
+			<a href=""><u>Forgot your password?</u></a>
+			<br>
+			<p class="bo">Don't have an account?
+			<a href="signup.html"><u>Sign Up</u></a></p>
+
+		</center>
+	</div>
+</form>
+</div>
+<script type="text/javascript">
+	
+	function valid(event)
+	{
+
+		var e=$('#email').val();
+		var p=$('#password').val();
+		if (!e) {
+			event.preventDefault();
+			alert('please enter email address');
+			email.focus();
+			return ;
+		}
+	 if(!p)
+		{event.preventDefault();
+			alert('please enter password');
+			password.focus();
+			return ;
+		}
+		
+	}
+</script>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>

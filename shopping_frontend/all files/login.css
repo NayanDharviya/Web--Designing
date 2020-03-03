@@ -1,0 +1,53 @@
+#h1
+{
+	padding-top: 25px;
+	word-spacing: 7px;
+}
+#p
+{
+	background-color: blue;
+
+}
+#h1 , #p
+{
+	color:white;
+}
+.input
+{
+	width: 280px;
+	height: 33px;
+}
+.w
+{
+	width: 280px;
+}
+.butn
+{
+	background-color: green;
+	color:white;
+	border-style: dotted;
+	width: 280px;
+}
+input:focus
+{
+	border-color: red;
+}
+.bo
+{
+	color:white;
+}
+.heading
+{
+	color: green;
+	padding-top: 50px;
+	font-family:fantasy;
+	letter-spacing: 5px;
+	font-size: 60px;
+	font-stretch:extra-expanded;
+	border-left: 550px;
+
+}
+.heading:hovor
+{
+	color: #6B5B95;
+}

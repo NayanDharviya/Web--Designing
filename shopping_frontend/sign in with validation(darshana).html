@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html manifest="hydra.appcache">
+    <head>
+        <meta name="google" value="notranslate">
+        <meta charset="UTF-8">
+        <title>Flock</title>
+        <link id="favicon" rel="SHORTCUT ICON" href="hash_2_2_190/client_base/images/favicon.ico" />
+        <link rel="stylesheet" href="hash_2_2_190/client_base/host/browser/style.css" />
+        <link rel="manifest" href="hash_2_2_190/client_base/host/browser/static/manifest.json">
+        <link rel="chrome-webstore-item" id="chrome-webstore-link" href="https://chrome.google.com/webstore/detail/">
+        <script type="text/javascript">
+            var supported = true;
+            try {
+                ua = navigator.userAgent;
+                function isFirefox(version) {
+                    var firefox = ua.match(" Firefox/([0-9]*).");
+                    return firefox && firefox[1] >= version;
+                }
+
+                function isChrome(version) {
+                    var chrome = ua.match(" Chrome/([^\.]*).");
+                    return chrome && chrome[1] >= version;
+                }
+
+                function isSafari(version) {
+                    var safari = ua.match(" Version/([^\.]*).* Safari");
+                    return safari && safari[1] >= version;
+                }
+
+                function isIndexedDBSupported() {
+                    window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+                    window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction || {READ_WRITE: "readwrite"};
+
+                    return !!window.indexedDB && !!window.IDBTransaction
+                }
+
+                function browserSupportOverwrite() {
+                    return window.location.href.indexOf("forceUnsupportedBrowser=1") > 0;
+                }
+
+                if (!browserSupportOverwrite() && ((!isFirefox(53) && !isChrome(38) && !isSafari(6)) || !isIndexedDBSupported())) {
+                    supported = false;
+                }
+            }
+            catch (e) {
+            }
+            if (!supported) {
+                window.location = "hash_2_2_190/client_base/host/browser/upgrade.html" + window.location.search;
+            }
+        </script>
+        <!-- Linkedin universal website tag code -->
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=163099&conversionId=180275&fmt=gif" />
+
+        <!-- Twitter universal website tag code -->
+        <script>
+            !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+            },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+                    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+            // Insert Twitter Pixel ID and Standard Event data below
+            twq('init','nymfu');
+            twq('track','PageView');
+        </script>
+        <script src="https://platform.twitter.com/oct.js" type="text/javascript"></script>
+
+        <!-- Capterra web tag code -->
+        <script type="text/javascript">
+            var capterra_vkey = '8696c33ea593080c261dd5c1bbc939b0',
+                    capterra_vid = '2106419',
+                    capterra_prefix = 'https://ct.capterra.com';
+
+            (function() {
+                var ct = document.createElement('script'); ct.type = 'text/javascript'; ct.async = true;
+                ct.src = capterra_prefix + '/capterra_tracker.js?vid=' + capterra_vid + '&vkey=' + capterra_vkey;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ct, s);
+            })();
+        </script>
+
+    </head>
+    <body class="blue" style="height: 100%">
+
+        <div id="promptsRoot"></div>
+
+        <div id="firstPageSplash" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%;
+    z-index: 1000; background: #fff;">
+            <div class="splashScreen" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%; background: url('hash_2_2_190/client_base/images/flock-logo.svg') no-repeat center 40%;background-size:320px 118px">
+                <div id="logoMessage" class="logoMessage" style="position: absolute; top:40%; color:#707070; margin-top:100px; font-size:25px; width:100%; text-align:center;">Simple, secure messaging for fast moving teams</div>
+            </div>
+        </div>
+
+        <!-- Connection states banner -->
+
+        <div class="connection-state-banner"><span data-dojo-attach-point="connectionstate">You are not connected to the internet.</span></div>
+
+        <!-- Begin: Google Code for Web client conversion tracking -->
+
+        <!--<noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/969568021/?label=isGyCMDkwGoQld6pzgM&amp;guid=ON&amp;script=0" />
+            </div>
+        </noscript>-->
+        <!-- End: Google Code for Web client conversion tracking -->
+    </body>
+    
+    <script type="text/javascript" src="hash_2_2_190/hydra/src/libs/dojotoolkit/dojo/dojo.js"></script>
+    <script type="text/javascript">
+        if (supported) {
+            dojo.global.indexPageStartTime = new Date().getTime();
+            require(["base_host/browser/all"]);
+        }
+    </script>
+</html>

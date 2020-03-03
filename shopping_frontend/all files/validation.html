@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title></title>
+</head>
+<body>
+<form onsubmit="valid(event)">
+<div class="form-group">
+	<label for="exampleinputEmail">Email Address</label><br>
+	<input type="email" class="form-control " id="emailid" placeholder="Email Address">
+	<small id="" class="form-text text-muted">dont share your password</small>
+	<br>
+	<label for="exampleinputPassword">Password</label>
+	<input type="password" id="pass" class="form-control" placeholder="Password">
+	<input type="checkbox"></input>
+	<label class="form-check-label">Check me out</label><br>
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</div>
+
+</form>
+
+<script type="text/javascript">
+	function valid(event)
+	{
+		var e=$('#emailid').val();
+		var p=$('#pass').val();
+		if(!e)
+		{
+			alert('enter email address');
+			return;
+		}
+		if(!p)
+		{
+			alert('enter password');
+			return;
+		}
+		if(p.length<8)
+		{
+			alert('password must atleast 8 character');
+			return;
+		}
+		alert('Email'+p+'password');
+	}
+</script>
+</body>
+</html>
