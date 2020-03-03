@@ -1,0 +1,156 @@
+* {
+  padding:0px;
+  margin:0px;
+  box-sizing:border-box;
+}
+.navbar-right {
+	padding:0px;
+	margin:0px;
+}
+.row {
+	padding:0px;
+	margin:0px;
+}
+.page-header {
+  background: #134E5E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin:0px;
+  padding:0px;
+  position:relative;
+  box-sizing:border-box;
+  background-attachment: fixed;
+  margin-top:48px;
+}
+
+.inner-page-header {
+	text-align:center;
+	color:white;
+	padding:180px 0px 180px 0px;
+}
+.inner-page-header h1 {
+font-size:60px;
+}
+.inner-page-header h2 {
+	font-size:48px;
+	padding:10px;
+}
+.inner-page-header button {
+	font-size:36px;
+	border-radius:25px;
+	border:2px solid white;
+	color:white;
+	background:none;
+}
+.about-container {
+	margin-top:25px;
+}
+.myimage {
+	background-size:cover;
+	height:400px;
+	box-shadow: 0px 0px 25px grey;
+}
+.img-container {
+	padding:10px 20px;
+}
+.cvb{ 
+margin-top:10px;
+ }
+.skill {
+	background:#464749;
+	color:white;
+	padding:45px 10px;
+	box-shadow: 0px 0px 15px #464749;
+	margin-top: 100px;
+	margin-bottom: 25px;
+}
+.skill h2 {
+	font-size:48px;
+	margin-top:-10px;
+	color:orange;
+}
+.inner-skill {
+	padding:40px;
+}
+.portfolio-container {
+	margin:110px 0px;
+	padding:0px 100px;
+}
+.portfolio-title {
+  text-align: center;
+  font-size: 45px;
+  color:orange;
+  text-shadow: 0px 0px 3px silver;
+}
+.cont {
+  position:relative;
+  margin-top:-1px;
+}
+.contact-header {
+  padding:25px;
+  color:orange;
+  font-size:50px;
+}
+.down{
+  font-size:40px;
+  font-weight:bold;
+}
+.mydetail{
+  background-color:#fff;
+}
+.mydetail .aboutme {
+  text-align:center;
+}
+.h2 {
+  font-size:50px;
+  font-size:bold;
+  text-align:center;
+  color:orange;
+}
+.h3 {
+  font-size:20px;
+  font-size:bold;
+  color:orange;
+  text-align:center;
+  margin-top:-5px;
+}
+.aboutpara {
+  color:black;
+  font-size:18px;
+  padding:5px 10px;
+  text-align:justify;
+}
+ li {
+   list-style-type:none; 
+  font-size:24px;
+  padding:3px 10px;
+}
+#textarea {
+  resize:none;
+  outline:none;
+}
+.contactlines {
+  padding:7px;
+  font-size:20px;
+  text-align:justify;
+}
+i {
+  border-radius:50%;
+  margin:0px auto;
+  color:black;
+}
+.sociallinks {
+  margin:0px auto;
+  margin-top:50px;
+}
+.sociallinks a {
+  padding:30px;
+}
+.contact_container {
+  background-color:#464749;
+  margin-top:120px;
+  color:white;
+}
+a {
+	color:white;
+}

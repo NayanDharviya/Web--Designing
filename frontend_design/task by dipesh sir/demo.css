@@ -1,0 +1,211 @@
+.h
+{
+	float: right;
+	    margin-top: 13px;
+    padding-right: 338px;
+	/*word-spacing: 3px;*/
+	 color: #846868;
+	 background-color: transparent; 
+}
+.li
+{
+	color:#777;
+
+}
+.aa
+{
+	color: white;
+}
+/*.dropdown {
+    position: relative;
+    display: inline-block;
+}*/
+
+
+/*
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}*/
+
+.dropdown-content a:hover {background-color: transparent;color: white;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:red; color: white;}
+/*.dropdown-content a:hover {background-color: #ddd;}*/
+/*
+.dropdown:hover .dropdown-content {display: block;}
+/*
+.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+
+
+.dropdown
+{
+	position: relative;
+	display: inline-block;
+}
+/*.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}*/
+.dropdown-content
+{
+	display: none;
+	position: absolute;
+	width: 1027px;
+	color: white;
+	background-color: #dc002e;;
+   min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 70px;
+    right: -498px;
+}
+.top
+{
+	top: -295px;
+
+}
+.col
+{
+	/*height: 20px;*/
+	width: 100%;
+}
+.lefta
+{
+	padding-left: 20px;
+}
+.di
+{
+width: 35px;
+color: white;
+
+}
+
+.glyphicon
+{
+	background-color: transparent;
+	border-color: transparent;
+}
+.h:hovor
+{
+	background-color: red;
+}
+
+.navbar-header
+{
+	padding-top: 25px;
+}
+
+.i
+{
+	height: 70px;
+}
+.title
+{
+	font-size: 12px;
+	color: #846868;
+}
+.div1
+{
+	position: absolute;
+
+}
+#p
+{
+	font-size:30px;
+}
+
+.div,.div3,.div5
+{
+	float: left;
+	border-top-right-radius: 50px;
+	position: relative;
+ 	width: 50%;
+	height: 33px;
+
+
+}
+#pp
+{
+	background-color :#d60535;
+	position: relative;
+	top: 32px;
+	color: white;
+	font-size: 40px;
+	height: 500px;
+}
+.div
+{
+	top:-502px;
+		background-color: white;
+}
+.div3
+{
+	top:-65px;
+		background-color: white;
+}
+.div5 
+{
+background-color :#d60535;
+
+}
+ .div6
+ {
+ 	background-color :#d60535;
+
+ }
+.div2,.div4,.div6
+{
+	border-top-left-radius: 50px;
+	float: right;
+	position: relative;
+	height: 33px;
+	
+	width: 50%;
+	
+
+}
+.div2
+{
+	top:-502px;
+		background-color: white;
+}
+.div4
+{
+	top:-65px;
+		background-color: white;
+
+}
+.nn
+{
+	position: relative;
+	height: 300px;
+}
+.navbar-nav
+{
+	    padding-top: 53px;
+    padding-left: 104px;
+    font-size: 17px;
+    color: #846868; 
+
+   /* word-spacing: 15px;*/
+}
+@media (min-width: 768px)
+.navbar-right {
+    float: right!important;
+    margin-right: 97px;
+}
+@media (min-width: 768px)
+.navbar-nav {
+    float: left;
+    margin: 0;
+    padding-left: 98px;
+    }

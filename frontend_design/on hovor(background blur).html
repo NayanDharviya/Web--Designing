@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  #ribbon-container a:before {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    border-right: 29px solid #4641DC;
+    border-left: 29px solid #4441DD;
+    border-top: 0px solid transparent;
+    border-bottom: 17px solid transparent;
+  }
+  div.absolute {
+    position: absolute;
+    width: 58px;
+    height: 45px;
+    top: 0px;
+    right: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    background-size: 100%;
+    background-color: #4541DC;
+    padding-top: 11px;
+    color: white;
+    line-height: 1.2;
+  }
+  .position-relative{
+    position:relative !important;
+  }
+  /* on hover class */
+  .myhover {
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    height: 306px;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  fieldset.scheduler-border {
+    border: 1px groove #F6F6F6 !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    border-left: 0px !important;
+    height: 30px;
+    font-size: 12px;
+  }
+  .col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+  legend {
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  legend.scheduler-border {
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Image Gallery</h2>
+    <p>The .thumbnail class can be used to display an image gallery.</p>
+    <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+    <p>Click on the images to enlarge them.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail position-relative">
+          <img src="d1.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+
+          <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+         </div>
+
+         <!-- On hover html code starts here -->
+         <div class="myhover">
+          <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+            <i class="glyphicon glyphicon-shopping-cart"> </i>
+            Shop &amp; Earn
+          </button>
+        </div>
+        <!-- On hover html code ends here -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(document).ready(function(){
+    /* on hover event code */
+    $(".thumbnail").on("mouseenter", function(){
+     $(this).find('.myhover').fadeIn(400);
+   }).on("mouseleave", function(){
+     $(this).find('.myhover').stop().fadeOut(100);
+   })
+ });
+</script>
+</html>

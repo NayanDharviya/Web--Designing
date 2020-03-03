@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  #ribbon-container a:before {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    border-right: 29px solid #4641DC;
+    border-left: 29px solid #4441DD;
+    border-top: 0px solid transparent;
+    border-bottom: 17px solid transparent;
+}
+div.absolute {
+    position: absolute;
+    width: 58px;
+    height: 45px;
+    top: 0px;
+    right: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    background-size: 100%;
+    background-color: #4541DC;
+    padding-top: 11px;
+    color: white;
+    line-height: 1.2;
+}
+.position-relative{
+  position:relative !important;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Image Gallery</h2>
+  <p>The .thumbnail class can be used to display an image gallery.</p>
+  <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail position-relative">
+          <img src="d1.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+      </div>
+   </div>
+</div>
+</body>
+</html>

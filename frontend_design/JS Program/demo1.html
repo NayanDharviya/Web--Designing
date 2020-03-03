@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="style.css" type="text/css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#show").click(function()
+		{
+			$("#p").show();
+		});
+		$("#hide").click(function(){
+			$("p").hide();
+		});
+			});
+	$("#flip").click(function(){
+		$("panel").slideToggle("slow");
+	});
+
+</script>
+<style type="text/css">
+	#panel
+	{
+		padding: 10px;
+		background-color: blue;
+		color: white;
+	}
+</style>
+</style>
+</head>
+<body>
+	<p id="p">hide me or show me 	</p>
+<button id="show" value="show" class="btn btn-primary">Show</button>
+<button id="hide" value="show" class="btn btn-primary">Hide</button>
+<button id="slidetoggle" value="show" class="btn btn-primary">Slide Toggle</button>
+
+<div id="flip">click me to slide down or up</div>
+<div id="panel">nayan dharviya</div>
+
+
+
+
+
+
+
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+
+</body>
+</html>

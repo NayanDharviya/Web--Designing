@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+<style>
+.navbar
+{
+	background-color: transparent;
+	padding: 5px;
+	border:none;
+}
+.btn1
+{
+  background-color: transparent;
+  border-color:transparent;
+  display: inline-block;
+  border-radius: 12px;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align:left;
+    width: 100%;
+    margin:0;
+    padding: 18px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+#ribbon-container a:before {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    border-right: 29px solid #4641DC;
+    border-left: 29px solid #4441DD;
+    border-top: 0px solid transparent;
+    border-bottom: 17px solid transparent;
+}
+div.absolute {
+    position: absolute;
+    width: 58px;
+    height: 45px;
+    top: 0px;
+    right: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    background-size: 100%;
+    background-color: #4541DC;
+    padding-top: 11px;
+    color: white;
+    line-height: 1.2;
+}
+.position-relative{
+  position:relative !important;
+}
+.myhover {
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    height: 250px; 
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: none;
+}
+fieldset.scheduler-border {
+    border: 1px groove #F6F6F6 !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    border-left: 0px !important;
+    height: 30px;
+    font-size: 12px;
+}
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+legend {
+  text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+legend.scheduler-border {
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+    font-size: 12px;
+}
+p
+{
+  color: white;
+}
+.footer-link
+{
+  color: white;
+}
+
+</style>
+<body>
+<img src="images.jpg" style="position:absolute;background-size:cover;height:50%;width: 100%;">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Dealwithus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style="color: white">How it work</a></li>
+        <li><a href="#" style="color: white;">calculator</a></li>
+        <li><a><button type="button" class="btn1" data-toggle="modal" data-target="#exampleModal">
+  login / singup
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-color:white;">Login / Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <center> <a href="#" class="fa fa-facebook" style="text-decoration: none;"> Facebook login</a></center>
+      </div>
+     
+      <div class="modal-body">
+          <center><a href="#" class="fa fa-google" style="text-decoration: none;"> Google sing up</a></center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-toggle="modal"
+        data-target="#nilesh" style="margin-left:100px;">login</button>
+        <button type="button" class="btn btn-primary">Singup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="nilesh" tabindex="-1" role="dialog" aria-labelledby="nilesh" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nilesh"> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="container" style="padding-left: 150px;">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required><br>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-toggle="modal"
+        data-target="nilesh" style="margin-left:100px;">login</button>
+        <button type="button" class="btn btn-primary" data-dismiss="model" class="close">Cancle</button>
+      </div>
+    </div>
+  </div>
+</div>
+</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid full-container_padding" style="margin-bottom: 20px;height: 100px;">
+	<div class="row" style="margin-top: 0px;">
+		<div class="col-md-12">
+			<h1 class="header_main" style="line-height:0;font-size: 10px;">
+				<center><span style="color:white;border: 1px solid rgba(255, 255, 255, .3);border-right: 0px;border-left: 0px;font-size: 25px;">Save Everytime you Shop</span></center></h1><br><br>
+        <div class="topnav">
+  <a class="active" href="#www">www</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+		
+		</div>
+	</div>
+</div><br>
+<div class="container-fluid" style="margin-top: 140px;">
+  <div class="col-md-6">
+  <h2>Top Store All Category</h2>
+</div><br>
+<div class="col-md-6">
+ <div class="dropdown" style="float: right;">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Browse by Category
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <center><li>Category</li></center><hr>
+      <li> <a href="#">
+          <span class="glyphicon glyphicon-th"></span> All
+        </a></li>
+        <li>
+         <a href="#">
+          <span class="glyphicon glyphicon-flash"></span> Recharghe
+        </a>
+        </li>
+      <li>
+      <a href="#">
+          <span class="glyphicon glyphicon-shopping-cart"></span> 
+          Mega Store
+        </li>
+        <li>
+      <a href="#">
+          <span class="glyphicon glyphicon-cutlery"></span> 
+          Food
+        </li>
+         <li>
+      <a href="#">
+          <span class="glyphicon glyphicon-plane"></span> 
+          Travel
+        </li>
+         <li>
+      <a href="#">
+          <span class="glyphicon glyphicon-gift"></span> 
+          Gifted
+        </li>
+                 
+    </ul>
+  </div>
+</div>
+</div>
+
+<hr style="border-color: black;border-width: 3px;">
+<br>
+<div class="container-fluid" style="padding-top: 10px;">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d1.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+             <center> <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+    </div>
+      <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d2.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+             <center> <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d3.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d4.png" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+ </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d5.png" alt="Lights" style="width:100%;height: 140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+    </div>
+      <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d6.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d7.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+             <center> <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d8.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+             <center> <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+</div>
+</div>
+<div class="container-fluid" id="n">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d9.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+    </div>
+      <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d10.png" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d11.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d12.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+ </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d5.png" alt="Lights" style="width:100%;height: 140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+             <center> <button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+    </div>
+      <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d6.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d7.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d8.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+</div>
+</div>
+
+<div class="container-fluid full-container_padding">
+     <center> <button class="btn btn-default" type="button" id="nn">View More Store</button></center>
+      </div><br>
+<div class="container-fluid full-container_padding" style="padding: 40px;">
+      <div class="row" style="background-color:#d0e1e1;padding: 50px;">
+      <div class="col-md-4" style="background-color:#d0e1e1;padding-top: 30px;">
+      <center><div class="col-md-4">
+      <span class="img-circle img-thumbnail" style="height:100px;width:200px;  border-radius:50%;display:inline-block;padding-top: 23px;padding-left: 22px;"><span class="fa fa-user-plus" style="padding-right: 260px;font-size:48px;color: blue;
+      "></span></span> 
+    </div></center>
+     <center> <div class="col-md-6">
+        <h4 style="margin-top: 25px;"> Join Dealwithus <br> for free</h4>
+      </div></center>
+<center><div class="col-md-2 " style="padding-top: 19px;">
+                     <span class="glyphicon glyphicon-forward hidden-md hidden-xs " style="font-size: 70px;color:blue;"></span>
+                     <span class="glyphicon glyphicon-triangle-bottom hidden-sm hidden-lg" style="font-size: 44px;color: #888888;"></span>
+                  </div></center>
+      </div>
+
+       <div class="col-md-4" style="background-color:#d0e1e1;margin-top: 30px;">
+     <center> <div class="col-md-4">
+      <span class="img-circle img-thumbnail" style="height:100px;width:200px;  border-radius:50%;display:inline-block;padding-top: 23px;padding-left: 15px;"><span class="glyphicon glyphicon-send" style="font-size:48px;color: blue;
+      "></span></span> 
+    </div></center>
+     <center> <div class="col-md-6">
+        <h4 style="margin-top: 25px;">Go to Retailer <br>via dealwithus & shop</h4>
+      </div></center>
+<center><div class="col-md-2 " style="padding-top: 19px;">
+                     <span class="glyphicon glyphicon-forward hidden-md hidden-xs " style="font-size: 70px;color:blue;"></span>
+                     <span class="glyphicon glyphicon-triangle-bottom hidden-sm hidden-lg" style="font-size: 44px;color: #888888;"></span>
+      </div></center>
+    </div>
+     <div class="col-md-4" style="background-color:#d0e1e1;margin-top: 30px;">
+     <center> <div class="col-md-4">
+      <span class="img-circle img-thumbnail" style="height:100px;width:200px;  border-radius:50%;display:inline-block;padding-top: 25px;padding-left: 30px;"><span class="fa fa-inr" style="padding-right: 260px;font-size:48px;color: blue;
+      "></span></span> 
+    </div></center>
+     <center> <div class="col-md-6">
+        <h4 style="margin-top: 25px;">Go to Retailer <br>via dealwithus & shop</h4>
+      </div></center>
+    </div>
+    
+    <div class="col-md-12" style="background-color:#d0e1e1;padding: 10px;padding-bottom:6px;">
+              <center> <a href="https://www.youtube.com/watch?v=cmArBZZnYU4" target="_blank" class="btn btn-lg" id="more_store" value="5" style="position:relative !important;background:transparent;border: 1px solid #2157FF;color: #2157FF;margin-left:auto !important;padding: 4px 12px;font-size: 15px;margin-bottom:20px">Watch Video</a></center>
+            </div>
+          </div>
+        </div><br>
+
+<div class="container-fluid full-container_padding">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Deals of the Day</h2><hr style="border-width: 1px;border-color: black">
+    </div>
+  </div>
+</div>
+<div class="container-fluid full-container_padding">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d9.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+            <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+    </div>
+      <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d10.png" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d11.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+             <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+    <div class="col-md-3">
+      <div class="thumbnail position-relative">
+          <img src="d12.jpg" alt="Lights" style="width:100%;height:140px;">
+          <div class="caption">
+           <center><h6>Get upto 1.26% Cashback</h6></center>
+
+          </div>
+                    <fieldset class="scheduler-border col-md-11 col-centered">
+            <legend class="scheduler-border" style="border-color: #4A42FE !important;color: #4A42FF;">
+              <h7>In Addition to</h7>
+            </legend>
+          </fieldset>
+          <span class="glyphicon glyphicon-user"></span>2342 &nbsp <span class="glyphicon glyphicon-eye-open"></span>12334
+          <div class="absolute text-center">Save <br> 10% </div>
+          <div id="ribbon-container">
+           <a href="#" id="ribbon" target="_blank"></a>
+          </div>
+           <div class="myhover">
+              <center><button class="btn btn-primary" style="margin-top:100px" onclick="link_window('amazon.in')">
+                <i class="glyphicon glyphicon-shopping-cart"> </i>
+                Shop &amp; Earn
+              </button></center>
+          </div>
+      </div>
+   </div>
+ </div>
+</div>
+<br>
+
+ <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="background-color:#d0e1e1;padding: 10px;">
+          <center> <h4>  Why Dealwithus</h4></center>
+        </div>
+      </div>
+      <div class="row" style="background-color:#d0e1e1;padding: 60px;">
+        <div class="col-md-4">
+         <center> <span class="img-circle img-thumbnail" style="height: 110px;width: 110px;">
+            <span class="glyphicon glyphicon-time" style="font-size: 60px;padding-top: 20px;padding-left: 0px;"></span></span></center><br>
+            <div class="col-md-12">
+             <center> <p style="font-weight: bold;color: gray;">10 MINUTE UPADATE TIMIMNG</p></center>
+           <center> <p style="color: gray">We will update cashback amount within</p></center>
+           <center><p style="color: gray">10 minutes after you purchase your product</p></center>
+            </div>
+      </div>
+      <div class="col-md-4">
+       <center><span class="img-circle img-thumbnail" style="height: 110px;width: 110px;">
+            <span class="fa fa-users" style="font-size: 50px;padding-top: 25px;padding-right: 155px;"></span></span></center><br>
+        <div class="col-md-12">
+          <center><p style="font-weight: bold;color: gray">10,000+SATISFIED CUSTMERS</p></center>
+          <center><p style="color: gray">Experience sold to 10,000+customers</p></center>
+          <center><p style="color: gray">across Indianand 400 + compaines</p></center>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <center><span class="img-circle img-thumbnail" style="height: 110px;width:110px;">
+          <span class="fa fa-shield" style="font-size: 50px;padding-top: 25px;padding-right: 155px;"></span></span></center><br>
+          <div class="col-md-12">
+          <center><p style="font-weight: bold;color: gray">GUARANTEED CASHBACK</p></center>
+          <center><p style="color: gray">Ensure 100% guaranty to provide</p></center>
+          <center><p style="color: gray">cashback to our customer</p></center>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <img src="nmn.jpg" style="width: 100%;height:300px;background-size:;position: absolute;">
+      <div class="container-fluid">
+          
+        <div class="row">
+          
+          <div class="col-md-8">
+
+            <h1 style="color: white">Sing-up for Free Coupons & Special Offers</h1>
+            <h3 style="color: white">Enter your Email ID. We promise to keep it to our</h3>
+          </div>
+        <div class="col-md-4">
+      
+                     <div class="input-group" style="border-radius: 3px;padding: 2px;margin-top: 36px;padding-left:0px;">
+                        <input id="subscriber" type="text" class="form-control" placeholder="Enter your Email ID to get best offers" style="border: 0px;border-radius: 70px 0% 0% 70px;">
+                        <span class="input-group-btn">
+                        <input id="subscribe_button" type="submit" class="btn btn-default" style="background: rgba(33, 87, 255, 0.68);color: white;border-radius: 0px 50px 50px 0px;" value="Subscribe">
+                        </span>
+                     </div>
+                
+      </div>
+      </div>
+    </div><br>
+    <div class="container-fluid" style="position:relative;">
+      <div class="row" style="background-color:#f2f2f9
+;height: 10px;">
+        <div class="col-md-12">
+          <center><h4>As seen in</h4></center>
+        </div>
+      </div>
+      <div class="row" style="background-color:#f2f2f9
+;height:200px;">
+        <div class="col-md-2">
+          <img src="ndtv.png" style="width:100%">         
+        </div>
+        <div class="col-md-2">
+           <img src="indianExpress.gif" style="width:100%">  
+        </div>
+        <div class="col-md-2">
+             <img src="toi.gif" style="width:100%">  
+        </div>
+        <div class="col-md-2">
+              <img src="yourstory.gif" style="width:100%">  
+        </div>
+        <div class="col-md-2">
+               <img src="livemint.png" style="width:100%">  
+        </div>
+        <div class="col-md-2">
+               <img src="mumbaimirror.png" style="width:100%">  
+        </div>
+      </div>
+     </div>
+
+ <div class="footer-container-fluid" style="background:#1c1c1c;position: relative;">
+         <footer id="footer" class="container" style="padding-top:30px">
+            <div class="row">
+
+               <div class="col-md-12">
+                  <div class="link-text text-left footer-font" style="margin-top:10px">
+                    <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Top Shopping Stores » </span>
+                    <a class="footer-link" href="/stores/1mg">1mg | </a><a class="footer-link" href="/stores/abof">abof | </a><a class="footer-link" href="/stores/agoda">Agoda | </a><a class="footer-link" href="/stores/airtel">Airtel | </a><a class="footer-link" href="/stores/amazon">Amazon | </a><a class="footer-link" href="/stores/americanswan">Americanswan | </a><a class="footer-link" href="/stores/amzer">Amzer | </a><a class="footer-link" href="/stores/aplava">aplava | </a><a class="footer-link" href="/stores/archies">Archies | </a><a class="footer-link" href="/stores/ask-me-grocery">ask me grocery | </a><a class="footer-link" href="/stores/askmebazaar">askmebazaar | </a><a class="footer-link" href="/stores/babyoye">Babyoye | </a><a class="footer-link" href="/stores/biba">BIBA | </a><a class="footer-link" href="/stores/bigbasket">BigBasket | </a><a class="footer-link" href="/stores/blue-stone">Blue Stone | </a><a class="footer-link" href="/stores/book-my-flowers">book my flowers | </a><a class="footer-link" href="/stores/campus-sutra">Campus sutra | </a><a class="footer-link" href="/stores/candere">Candere | </a><a class="footer-link" href="/stores/chumbak">Chumbak | </a><a class="footer-link" href="/stores/clovia">Clovia | </a><a class="footer-link" href="/stores/coke2home">Coke2home | </a><a class="footer-link" href="/stores/croma-retail-2">Croma retail | </a><a class="footer-link" href="/stores/dailyobjects">dailyobjects | </a><a class="footer-link" href="/stores/dominos">Dominos | </a><a class="footer-link" href="/stores/e-zone">e-zone | </a><a class="footer-link" href="/stores/ebay">Ebay | </a><a class="footer-link" href="/stores/exciting-lives">Exciting Lives | </a><a class="footer-link" href="/stores/expedia">expedia | </a><a class="footer-link" href="/stores/faasos">Faasos | </a><a class="footer-link" href="/stores/fab-alley">fab alley | </a><a class="footer-link" href="/stores/fabindia">fabindia | </a><a class="footer-link" href="/stores/ferns-n-petals">Ferns N Petals | </a><a class="footer-link" href="/stores/firstcry">firstcry | </a><a class="footer-link" href="/stores/flaberry">Flaberry | </a><a class="footer-link" href="/stores/flipkart">Flipkart | </a><a class="footer-link" href="/stores/flower-aura">flower aura | </a><a class="footer-link" href="/stores/flying-machine">flying_machine | </a><a class="footer-link" href="/stores/foodpanda">foodpanda | </a><a class="footer-link" href="/stores/freecharge">freecharge | </a><a class="footer-link" href="/stores/gift-a-love">Gift a love | </a><a class="footer-link" href="/stores/giftease">Giftease | </a><a class="footer-link" href="/stores/gifts-by-meeta">Gifts by meeta | </a><a class="footer-link" href="/stores/greendust">GreenDust | </a><a class="footer-link" href="/stores/happily-unmarried">Happily Unmarried | </a><a class="footer-link" href="/stores/healthgenie">healthgenie | </a><a class="footer-link" href="/stores/healthkart">healthkart | </a><a class="footer-link" href="/stores/hi2buy">Hi2buy | </a><a class="footer-link" href="/stores/high5store">High5Store | </a><a class="footer-link" href="/stores/homeshop18">Homeshop18 | </a><a class="footer-link" href="/stores/hopscotch">Hopscotch | </a><a class="footer-link" href="/stores/hotels">Hotels | </a><a class="footer-link" href="/stores/igp">IGP | </a><a class="footer-link" href="/stores/indiareads">Indiareads | </a><a class="footer-link" href="/stores/i">infibeam | </a><a class="footer-link" href="/stores/jabong">JABONG | </a><a class="footer-link" href="/stores/kaaryah">Kaaryah | </a><a class="footer-link" href="/stores/kapkids">Kapkids | </a><a class="footer-link" href="/stores/kfc">KFC | </a><a class="footer-link" href="/stores/killerkart">Killerkart | </a><a class="footer-link" href="/stores/kindercart">Kindercart | </a><a class="footer-link" href="/stores/koovs">Koovs | </a><a class="footer-link" href="/stores/latestone">Latestone | </a><a class="footer-link" href="/stores/lenskart">Lenskart | </a><a class="footer-link" href="/stores/limeroad">Limeroad | </a><a class="footer-link" href="/stores/limeroad-limeroad">Limeroad | </a><a class="footer-link" href="/stores/madsbag">Madsbag | </a><a class="footer-link" href="/stores/makemyhome">Makemyhome | </a><a class="footer-link" href="/stores/mobikwik">Mobikwik | </a><a class="footer-link" href="/stores/monte-carlo">Monte Carlo | </a><a class="footer-link" href="/stores/my-flower-tree">My Flower Tree | </a><a class="footer-link" href="/stores/mybustickets">mybustickets | </a><a class="footer-link" href="/stores/myntra">myntra | </a><a class="footer-link" href="/stores/naaptol">Naaptol | </a><a class="footer-link" href="/stores/nearbuy">Nearbuy | </a><a class="footer-link" href="/stores/netmeds">Netmeds | </a><a class="footer-link" href="/stores/nineteen">Nineteen | </a><a class="footer-link" href="/stores/nykaa">Nykaa | </a><a class="footer-link" href="/stores/oyo-room">OYO Room | </a><a class="footer-link" href="/stores/paytm">Paytm | </a><a class="footer-link" href="/stores/pepperfry">PepperFry | </a><a class="footer-link" href="/stores/pizzahut">Pizzahut | </a><a class="footer-link" href="/stores/pragyan">Pragyan | </a><a class="footer-link" href="/stores/prettysecrets">PrettySecrets | </a><a class="footer-link" href="/stores/printland">printland | </a><a class="footer-link" href="/stores/printvenue">Printvenue | </a><a class="footer-link" href="/stores/puma">Puma | </a><a class="footer-link" href="/stores/purchase-karo">Purchase karo | </a><a class="footer-link" href="/stores/purplle">purplle | </a><a class="footer-link" href="/stores/qatarairways">QatarAirways | </a><a class="footer-link" href="/stores/rediff">Rediff | </a><a class="footer-link" href="/stores/reward-me">Reward me | </a><a class="footer-link" href="/stores/shop-cj">SHOP CJ | </a><a class="footer-link" href="/stores/shop-clues">Shop Clues | </a><a class="footer-link" href="/stores/shopclues">Shopclues | </a><a class="footer-link" href="/stores/shoppers-stop">Shoppers Stop | </a><a class="footer-link" href="/stores/slimthread">Slimthread | </a><a class="footer-link" href="/stores/smile-drive">Smile Drive | </a><a class="footer-link" href="/stores/snapdeal">Snapdeal | </a><a class="footer-link" href="/stores/sports365">Sports365 | </a><a class="footer-link" href="/stores/stalkbuylove">StalkBuyLove | </a><a class="footer-link" href="/stores/standard-chartered">Standard Chartered | </a><a class="footer-link" href="/stores/stitchmyfit">Stitchmyfit | </a><a class="footer-link" href="/stores/suratdiamond">suratdiamond | </a><a class="footer-link" href="/stores/swiggy">Swiggy | </a><a class="footer-link" href="/stores/tambulya">tambulya | </a><a class="footer-link" href="/stores/thomascook">thomascook | </a><a class="footer-link" href="/stores/ticketgoose">TicketGoose | </a><a class="footer-link" href="/stores/tolexo">TOLEXO | </a><a class="footer-link" href="/stores/travelkhana">Travelkhana | </a><a class="footer-link" href="/stores/trendin-com">Trendin.com | </a><a class="footer-link" href="/stores/vistaprint">VistaPrint | </a><a class="footer-link" href="/stores/vistara">Vistara | </a><a class="footer-link" href="/stores/voxpop">Voxpop | </a><a class="footer-link" href="/stores/voylla">Voylla | </a><a class="footer-link" href="/stores/wear-your-shine">Wear your shine | </a><a class="footer-link" href="/stores/wonderchef">wonderchef | </a><a class="footer-link" href="/stores/yatra">Yatra | </a><a class="footer-link" href="/stores/yepme">Yepme | </a><a class="footer-link" href="/stores/zivame">zivame | </a><a class="footer-link" href="/stores/zoomcar">Zoomcar | </a><a class="footer-link" href="/stores/zovi">ZOVI | </a>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="link-text text-left footer-font" style="margin-top:10px">
+                     <span class="title-block-footer " style="color:#00d2ff;font-size:14px">About Dealwithus » </span>
+                     <a class="footer-link" href="blog" target="_blank">Blog | </a><a class="footer-link" href="#"> Forum | </a>
+                     <a class="footer-link" href="page/help" target="_blank"> Frequently Asked Question | </a>
+                     <a class="footer-link" href="#"> Refer &amp; Earn | </a><a class="footer-link" href="page/career/ambassador"> careers | </a>
+                     <a class="footer-link" href="page/help"> Contact Us | </a>
+                     <a class="footer-link" href="Policy"> Terms &amp; Conditions | </a><a class="footer-link" href="Policy"> Privacy Policy </a>
+
+                  </div>
+               </div>
+               <div class="col-md-12" style="margin-bottom:20px">
+                  <div class="link-text text-left footer-font" style="margin-top:10px;padding-bottom: 20px;border-bottom: 1px solid #353535;font-size:13px;line-height:10px">
+                     <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Top Categories » </span>
+                     <a class="footer-link" href="index.php?category=All" target="_blank">All | </a><a class="footer-link" href="index.php?category=Electronics">Electronics | </a>
+                     <a class="footer-link" href="index.php?category=Recharge" target="_blank"> Recharge | </a>
+                     <a class="footer-link" href="index.php?category=Mega"> Mega Store | </a><a class="footer-link" href="index.php?category=Fashion"> Fashion | </a>
+                     <a class="footer-link" href="index.php?category=Food"> Food | </a>
+                     <a class="footer-link" href="index.php?category=Travel"> Travel | </a><a class="footer-link" href="index.php?category=Beauty"> Beauty </a>
+
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="link-text text-left footer-font">
+                     <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Office Address: </span>
+                     <p>1051, Heera Panna Mall, (Near Cafe Mangii Hiranandani) Powai, Mumbai 400076</p>
+
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="link-text text-left footer-font">
+                     <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Contact Us: </span>
+                     <p>Phone » +91-97 5741 8414 <br> Email » contact@dealwithus.co.in</p>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="link-text text-left footer-font">
+                     <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Social Media: </span><br>
+                     <a href=https://plus.google.com/101828632365613528725/posts?hl=en" class="fa fa-facebook" style=" background: #3B5998;color: white;font-size:10px;height:20px;width:20px;"></a>
+<a href="https://www.facebook.com/dealwithus.co.in" class="fa fa-twitter" style=" background: #55ACEE;font-size:10px;height:20px;width:20px;"></a>
+<a href="https://twitter.com/dealwithusinfo" class="fa fa-google" style=" background: #dd4b39; color: white; font-size:10px;height:20px; width:20px;"></a>
+<a href="https://www.linkedin.com/company/dealwithus-co-in" class="fa fa-linkedin" style=" background: #007bb5;color: white;font-size:10px;height:20px; width:20px;"></a>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="link-text text-left footer-font">
+                   <span class="title-block-footer " style="color:#00d2ff;font-size:14px">Partners: </span> <br>
+                     <a href="https://msg91.com/startups/?utm_source=startup-banner"><img src="msg91Badge.jpg" height="30" title="MSG91 - SMS for Startups" alt="Bulk SMS - MSG91"></a>
+                     <a href="http://www.dealwithus.co.in/stores/flipkart/"><img src="flipkart-logo-150x150.jpg" class="img-thumbnail" style="height:30px" title="Flipkart Offers" alt="Flipkart Offers and Coupon"></a>
+                     <a href="http://www.dealwithus.co.in/stores/dominos/"><img src="Dominos-logo.jpg" class="img-thumbnail" style="height:30px" title="Dominos Offers" alt="Dominos Offers and Coupon"></a>
+                     <a href="http://www.dealwithus.co.in/stores/amazon/"><img src="amazonlogo-150x150.jpg" class="img-thumbnail" style="height:30px" title="Amazon Offers" alt="Amazon Offers and Coupon"></a>
+                     <a href="http://www.dealwithus.co.in/stores/airtel/"><img src="airtel-150x150.jpg" class="img-thumbnail" style="height:30px" title="Airtel Offers" alt="Airtel Recharge Offers and Coupon"></a>
+                     <a href="http://www.dealwithus.co.in/stores/snapdeal/"><img src="snapdeal-150x150.jpg" class="img-thumbnail" style="height:30px" title="Snapdeal Offers" alt="Snapdeal Offers and Coupon"></a>
+                     <a href="http://www.dealwithus.co.in/stores/limeroad/"><img src="limeroad-1-150x150.jpg" class="img-thumbnail" style="height:30px" title="Limeroad Offers" alt="LimeRoad Offers and Coupon"></a>
+                  </div>
+               </div>
+               <div class="col-md-12" style="padding-top: 28px;border-top: 1px solid #353535;font-size:13px;line-height:10px;padding: 30px;">
+                  <center><p>Created By <b style="color:white;font-weight:400">Dealwithus Team</b></p>
+                  Copyright 2015 Afflatus Creative Solutions Pvt Ltd.</center>
+               </div>
+            </div>
+         </footer>
+      </div>
+
+
+     
+<script>
+  $(document).ready(function(){
+    $("#n").hide();
+    
+    $("#nn").click(function()
+    {
+
+      $("#n").show();
+    });
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    /* on hover event code */
+     $(".thumbnail").on("mouseenter", function(){
+         $(this).find('.myhover').fadeIn(400);
+     }).on("mouseleave", function(){
+         $(this).find('.myhover').stop().fadeOut(100);
+     })
+  });
+</script>
+
+</body>
+</html>
+
